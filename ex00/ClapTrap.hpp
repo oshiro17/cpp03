@@ -19,4 +19,4 @@ public:
 	ClapTrap& operator=(const ClapTrap& obj);
 	void showStatus();
 };
-#endif;
+#endif
