@@ -16,14 +16,14 @@ void ScavTrap::guardGate()
 }
 ScavTrap::ScavTrap(const ScavTrap& obj):ClapTrap(obj)
 {
-	std::cout << this->_name <<" : Copy constructor of ClapTrap called"<<std::endl;
+	std::cout << this->_name <<" : Copy constructor of ScavTrap called"<<std::endl;
 	*this = obj;
 	return;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& obj)
 {
-	std::cout<<"Copy assignment operator of ClapTrap called"<<std::endl;
+	std::cout<<"Copy assignment operator of ScavTrap called"<<std::endl;
 	this->_name = obj._name;
 	this->_hitPoint = obj._hitPoint;
 	this->_energyPoint =obj._energyPoint;
@@ -39,7 +39,7 @@ void ScavTrap::attack(const std::string& target)
 		return;
 	}
 	this->_energyPoint += -1;
-	std::cout<<"ClapTrap " <<this->_name<< " attacks " << target;
+	std::cout<<"ScavTrap " <<this->_name<< " attacks " << target;
 	std::cout<<" causing " <<this->_attackDamage<<" points of damage!"<<std::endl;	
 }
 
