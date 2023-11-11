@@ -42,7 +42,7 @@ void ClapTrap::attack(const std::string& target)
 		std::cout<<this->_name<<" is died!"<<std::endl;
 		return;
 	}
-	this->_energyPoint += -1;
+	this->_energyPoint--;
 	std::cout<<"ClapTrap " <<this->_name<< " attacks " << target;
 	std::cout<<" causing " <<this->_attackDamage<<" points of damage!"<<std::endl;	
 }
