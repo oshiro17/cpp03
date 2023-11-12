@@ -7,7 +7,6 @@ ClapTrap::ClapTrap(std::string name)
 	else
 		this->_name = name;
 	std::cout << this->_name <<" : Constructor of ClapTrap called"<<std::endl;
-	if (name.empty())
 	this->_hitPoint = 10;
 	this-> _energyPoint = 10;
 	this->_attackDamage = 0;
@@ -31,16 +30,21 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& obj)
 	this->_name = obj._name;
 	this->_hitPoint = obj._hitPoint;
 	this->_energyPoint =obj._energyPoint;
-	this->_energyPoint = obj._attackDamage;
+	this->_attackDamage = obj._attackDamage;
 	return (*this);
 }
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (this->_hitPoint == 0 || this->_energyPoint == 0)
+	if (this->_hitPoint == 0)
 	{
-		std::cout<<this->_name<<" is died!"<<std::endl;
+		std::cout<<this->_name<<" is dead!"<<std::endl;
 		return;
+	}
+	else(this->_energyPoint == 0)
+	{
+		std::cout<<this->_name<<" has no energyPoint!"<<std::endl;
+		return ;
 	}
 	this->_energyPoint--;
 	std::cout<<"ClapTrap " <<this->_name<< " attacks " << target;
@@ -49,15 +53,15 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (this->_hitPoint == 0 || this->_energyPoint == 0)
+	if (this->_hitPoint == 0)
 	{
-		std::cout<<this->_name<<" is died!"<<std::endl;
+		std::cout<<this->_name<<" is dead!"<<std::endl;
 		return;
 	}
-	if (amount >= this->_hitPoint)
+	else if (amount >= this->_hitPoint)
 	{	
 		this->_hitPoint = 0;
-		std::cout<<"ClapTrap "<< this->_name <<" is died!"<<std::endl;
+		std::cout<<"ClapTrap "<< this->_name <<" is dead!"<<std::endl;
 		return;
 	}
 	this->_hitPoint = this->_hitPoint - amount;
@@ -67,9 +71,14 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_hitPoint == 0 || this->_energyPoint == 0)
+	if (this->_hitPoint == 0)
 	{
-		std::cout<<this->_name<<" is died!"<<std::endl;
+		std::cout<<this->_name<<" is dead!"<<std::endl;
+		return;
+	}
+	else (this->_energyPoint == 0)
+	{
+		std::cout<<this->_name<<"has no energyPoint!"<<std::endl;
 		return;
 	}
 	this->_hitPoint +=	amount;
