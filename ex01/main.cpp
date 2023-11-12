@@ -3,7 +3,7 @@
 
 int	main(void)
 {
-	ScavTrap a("A");
+	ScavTrap a;
 	ScavTrap b;
 
 	a.attack("B");

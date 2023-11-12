@@ -10,7 +10,6 @@ protected:
 	unsigned int	_energyPoint;
 	unsigned int	_attackDamage;
 public:
-	ClapTrap();
 	ClapTrap(std::string name = "CLAPHOGE");
 	ClapTrap(const ClapTrap& obj);
 	~ClapTrap();

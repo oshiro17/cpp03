@@ -1,4 +1,5 @@
 #include "ScavTrap.hpp"
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << this->_name <<" : Constructor of ScavTrap called"<<std::endl;
