@@ -6,23 +6,24 @@
 #    By: panti <panti@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/23 11:10:16 by panti             #+#    #+#              #
-#    Updated: 2023/10/15 20:41:50 by panti            ###   ########.fr        #
+#    Updated: 2023/11/12 21:52:49 by panti            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= a.out
 	
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -MMD -MP
 RM		= rm -rf
 FILES	= main ClapTrap
 OBJS	= $(FILES:=.o)
+DEPS	= $(FILES:=.d)
 .PHONY: all clean re
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
@@ -31,3 +32,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+-include $(DEPS)
