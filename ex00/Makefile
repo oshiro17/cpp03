@@ -6,7 +6,7 @@
 #    By: panti <panti@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/23 11:10:16 by panti             #+#    #+#              #
-#    Updated: 2023/11/12 21:52:49 by panti            ###   ########.fr        #
+#    Updated: 2023/11/12 22:11:34 by panti            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(NAME): $(OBJS)
 	$(CC) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(DEPS)
 
 fclean: clean
 	$(RM) $(NAME)
