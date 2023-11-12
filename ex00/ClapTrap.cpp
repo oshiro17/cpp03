@@ -41,7 +41,7 @@ void ClapTrap::attack(const std::string& target)
 		std::cout<<this->_name<<" is dead!"<<std::endl;
 		return;
 	}
-	else(this->_energyPoint == 0)
+	else if(this->_energyPoint == 0)
 	{
 		std::cout<<this->_name<<" has no energyPoint!"<<std::endl;
 		return ;
@@ -76,7 +76,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout<<this->_name<<" is dead!"<<std::endl;
 		return;
 	}
-	else (this->_energyPoint == 0)
+	else if   (this->_energyPoint == 0)
 	{
 		std::cout<<this->_name<<"has no energyPoint!"<<std::endl;
 		return;
