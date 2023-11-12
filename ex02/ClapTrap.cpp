@@ -1,5 +1,14 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+	this->_name = "NO_NAME_HOGE";
+	std::cout << this->_name <<" : Constructor of ClapTrap called"<<std::endl;
+	this->_hitPoint = 10;
+	this-> _energyPoint = 10;
+	this->_attackDamage = 0;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
 	if (name.empty())
@@ -91,5 +100,5 @@ void ClapTrap::showStatus()
 	std::cout<<"\033[31m "<<this->_name<<" status " << std::endl;
 	std::cout<<"hitPoint:"<<this->_hitPoint<<std::endl;
 	std::cout<<"energyPoint:"<<this->_energyPoint<<std::endl;
-	std::cout<<"attackDamage:"<<this->_attackDamage<<"\033[m"<<std::endl;
+	std::cout<<"attackDamage:"<<this->_attackDamage<<""<<std::endl;
 }
