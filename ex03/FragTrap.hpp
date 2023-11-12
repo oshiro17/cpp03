@@ -3,6 +3,9 @@
 #include "ClapTrap.hpp"
 class FragTrap : virtual public ClapTrap
 {
+protected:
+	const static int _fragAttackDamage = 30;
+	const static int _fragHitPoint = 100;
 public:
 	FragTrap(std::string name = "FRAP_HOGE");
 	FragTrap(const FragTrap& obj);
