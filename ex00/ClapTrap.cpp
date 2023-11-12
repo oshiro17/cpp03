@@ -91,5 +91,5 @@ void ClapTrap::showStatus()
 	std::cout<<"\033[31m "<<this->_name<<" status " << std::endl;
 	std::cout<<"hitPoint:"<<this->_hitPoint<<std::endl;
 	std::cout<<"energyPoint:"<<this->_energyPoint<<std::endl;
-	std::cout<<"attackDamage:"<<this->_attackDamage<<""<<std::endl;
+	std::cout<<"attackDamage:"<<this->_attackDamage<<"\033[m"<<std::endl;
 }
