@@ -7,11 +7,9 @@ int	main(void)
 	ScavTrap b;
 
 	a.attack("B");
-	b.takeDamage(5);
-	b.beRepaired(3);
-	b.attack("A");
-	b.guardGate();
+	a.showStatus();
 	a.takeDamage(10);
+	a.showStatus();
 	a.beRepaired(10);
 	a.showStatus();
 	return (0);

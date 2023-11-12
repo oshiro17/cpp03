@@ -1,4 +1,5 @@
 #include "ScavTrap.hpp"
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << this->_name <<" : Constructor of ScavTrap called"<<std::endl;
@@ -33,9 +34,14 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& obj)
 
 void ScavTrap::attack(const std::string& target)
 {
-	if (this->_hitPoint == 0 || this->_energyPoint == 0)
+	if (this->_hitPoint == 0)
 	{
 		std::cout<<this->_name<<" is died!"<<std::endl;
+		return;
+	}
+	else if(this->_energyPoint == 0)
+	{
+		std::cout<<this->_name<<" has no energyPoint!"<<std::endl;
 		return;
 	}
 	this->_energyPoint --;

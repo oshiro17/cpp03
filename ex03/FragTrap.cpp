@@ -3,9 +3,9 @@
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << this->_name <<" : Constructor of FragTrap called"<<std::endl;
-	this->_hitPoint = 100;
+	this->_hitPoint = _fragHitPoint;
 	this->_energyPoint = 100;
-	this->_attackDamage = 30;
+	this->_attackDamage = _fragAttackDamage;
 }
 FragTrap::~FragTrap()
 {
@@ -13,9 +13,14 @@ FragTrap::~FragTrap()
 }
 void FragTrap::highFivesGuys()
 {
-	if (this->_hitPoint == 0 || this->_energyPoint == 0)
+	if (this->_hitPoint == 0)
 	{
 		std::cout<<this->_name<<" is died!"<<std::endl;
+		return;
+	}
+	if (this->_energyPoint == 0)
+	{
+		std::cout<<this->_name<<" has no energyPoint!"<<std::endl;
 		return;
 	}
 	std::cout << "FragTrap " << this->_name << " high five!\n";
