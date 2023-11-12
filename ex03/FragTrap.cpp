@@ -1,5 +1,4 @@
 #include "FragTrap.hpp"
-//test
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
@@ -35,7 +34,7 @@ FragTrap& FragTrap::operator=(const FragTrap& obj)
 	this->_name = obj._name;
 	this->_hitPoint = obj._hitPoint;
 	this->_energyPoint =obj._energyPoint;
-	this->_energyPoint = obj._attackDamage;
+	this->_attackDamage = obj._attackDamage;
 	return (*this);
 }
 
