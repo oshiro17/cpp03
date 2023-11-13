@@ -1,8 +1,9 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(), ScavTrap()
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), ScavTrap(name)
 {
 	ClapTrap::_name = name + "_clap_name";
+	this->_name = name;
     std::cout << this->_name << " Constructor of DiamondTrap called" << std::endl;
     this->_attackDamage = FragTrap::_fragAttackDamage;
     this->_hitPoint = FragTrap::_fragHitPoint;
@@ -16,6 +17,7 @@ DiamondTrap::~DiamondTrap()
 
 DiamondTrap::DiamondTrap(const DiamondTrap& obj) : ClapTrap(obj),FragTrap(obj),ScavTrap(obj)
 {
+	ClapTrap::_name = obj._name + "_clap_name";
 	this->_name = obj._name;
 	std::cout<<obj._name<<std::endl;
 	std::cout << this->_name <<" : Copy constructor of DiamondTrap called"<<std::endl;
@@ -25,6 +27,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap& obj) : ClapTrap(obj),FragTrap(obj),S
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& obj)
 {
+	
 	std::cout<<"Copy assignment operator of DiamondTrap called"<<std::endl;
 	this->_name = obj._name;
 	this->_hitPoint = obj._hitPoint;
@@ -35,8 +38,7 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& obj)
 
 void DiamondTrap::whoAmI()
 {
-	std::cout<<"This DiamondTrap name is " << this->_name 
-		<<" and this ClapTrap name is "<< ClapTrap::_name <<std::endl;
+	std::cout<<"This DiamondTrap name is " << this->_name <<" and this ClapTrap name is "<< ClapTrap::_name <<std::endl;
 }
 
 // void ScavTrap::takeDamage(unsigned int amount)

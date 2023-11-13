@@ -14,8 +14,8 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
 {
-	std::cout << this->_name <<" : Copy constructor of ClapTrap called"<<std::endl;
 	*this = obj;
+	std::cout << obj._name <<" : Copy constructor of ClapTrap called"<<std::endl;
 	return;
 }
 

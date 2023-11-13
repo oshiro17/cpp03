@@ -4,7 +4,6 @@
 int	main(void)
 {
 	ScavTrap a;
-	ScavTrap b;
 
 	a.attack("B");
 	a.showStatus();
@@ -12,5 +11,6 @@ int	main(void)
 	a.showStatus();
 	a.beRepaired(10);
 	a.showStatus();
+	ScavTrap a2(a);
 	return (0);
 }
