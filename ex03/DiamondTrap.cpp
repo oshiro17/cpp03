@@ -19,7 +19,6 @@ DiamondTrap::DiamondTrap(const DiamondTrap& obj) : ClapTrap(obj),FragTrap(obj),S
 {
 	ClapTrap::_name = obj._name + "_clap_name";
 	this->_name = obj._name;
-	std::cout<<obj._name<<std::endl;
 	std::cout << this->_name <<" : Copy constructor of DiamondTrap called"<<std::endl;
 	*this = obj;
 	return;
