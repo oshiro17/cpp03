@@ -1,6 +1,6 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(), ScavTrap()
 {
 	ClapTrap::_name = name + "_clap_name";
 	this->_name = name;
@@ -18,9 +18,9 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap::DiamondTrap(const DiamondTrap& obj) : ClapTrap(obj),FragTrap(obj),ScavTrap(obj)
 {
 	ClapTrap::_name = obj._name + "_clap_name";
-	this->_name = obj._name;
-	std::cout << this->_name <<" : Copy constructor of DiamondTrap called"<<std::endl;
 	*this = obj;
+	std::cout << this->_name <<" : Copy constructor of DiamondTrap called"<<std::endl;
+	// *this = obj;
 	return;
 }
 
